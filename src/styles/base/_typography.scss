@@ -1,0 +1,8 @@
+@use "../utils/variables" as *;
+
+body {
+  font-family: $font-family;
+  * {
+    font-family: $font-family;
+  }
+}
