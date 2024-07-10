@@ -12,11 +12,16 @@ h1 {
   font-size: 2rem;
 }
 
+p {
+  letter-spacing: 0.025rem;
+}
+
 strong {
   font-weight: 600;
 }
 
 .title {
+  position: relative;
   &--underline {
     $underline-gap: 15px;
     padding: $underline-gap 0;
@@ -35,6 +40,25 @@ strong {
     }
   }
 
-  // $--lines {
-  // }
+  &--lines {
+    padding: 0 5px;
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      display: block;
+      height: 1px;
+      width: 50px;
+      background-color: $color-primary;
+    }
+
+    &::after {
+      left: 100%;
+    }
+
+    &::before {
+      right: 100%;
+    }
+  }
 }
