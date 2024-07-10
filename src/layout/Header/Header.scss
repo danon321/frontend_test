@@ -18,7 +18,6 @@
   &__text {
     text-align: end;
     font-size: 1.25rem;
-    letter-spacing: 0.025rem;
 
     @include tablet-landscape-up {
       font-size: 2rem;
