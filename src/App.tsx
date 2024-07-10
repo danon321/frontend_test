@@ -1,4 +1,5 @@
 import "./App.scss";
+import Footer from "./layout/Footer";
 import Header from "./layout/Header";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
           <section>Blok 3</section>
         </div>
       </main>
+      <Footer />
     </>
   );
 }
