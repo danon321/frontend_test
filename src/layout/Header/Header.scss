@@ -1,0 +1,27 @@
+@use "../../styles/utils/variables" as *;
+@use "../../styles/utils/mixins" as *;
+
+.header {
+  @include horizontal-gaps;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: $bg-secondary;
+
+  &__text {
+    text-align: end;
+    font-size: 1.25rem;
+    letter-spacing: 0.025rem;
+
+    @include tablet-landscape-up {
+      font-size: 2rem;
+    }
+  }
+}
