@@ -1,0 +1,12 @@
+@use "./variables" as *;
+
+@mixin horizontal-gaps {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+@mixin tablet-landscape-up {
+  @media (min-width: $tablet-landscape) {
+    @content;
+  }
+}
