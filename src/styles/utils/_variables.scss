@@ -1,10 +1,14 @@
+$color-primary: #2a2d36;
+$color-secounday: #0b0c10;
+$color-tertriary: #e88201;
+
 //Text colors
 $text-primary: #ffffff;
 $text-secondary: #9ea3b4;
 
 //Background colors
-$bg-primary: #2a2d36;
-$bg-secondary: #0b0c10;
+$bg-primary: $color-primary;
+$bg-secondary: $color-secounday;
 $bg-tertiary: #ffffff;
 
 //Border colors
@@ -12,3 +16,7 @@ $border-color-primary: #ffffff;
 
 //Fonts
 $font-family: "OpenSans", "Roboto", sans-serif;
+
+//Breakpoints
+$tablet-landscape: 960px;
+$desktop: 1200px;
