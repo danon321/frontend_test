@@ -1,0 +1,41 @@
+@use "../../styles/utils/variables" as *;
+@use "../../styles/utils/mixins" as *;
+
+.button {
+  background-color: transparent;
+  border: 1px $border-color-primary solid;
+  border-radius: 0.25rem;
+  padding: 15px 50px;
+
+  font-size: 1rem;
+  color: $text-secondary;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  transition-property: background-color, color, border-color;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+
+  &:hover,
+  &:focus {
+    background: linear-gradient(
+        120deg,
+        darken($color-tertriary, 20%),
+        transparent
+      )
+      $color-tertriary;
+    color: $text-primary;
+  }
+
+  &--secoundary {
+    border-color: $color-secounday;
+
+    &:hover,
+    &:focus {
+      color: $text-primary;
+      border-color: $border-color-primary;
+      background: transparent;
+    }
+  }
+}
