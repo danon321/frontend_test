@@ -1,0 +1,31 @@
+@use "../../styles/utils/variables" as *;
+@use "../../styles/utils/mixins" as *;
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $bg-primary;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+
+  transition: background-color 0.5s ease-in-out;
+
+  @include tablet-landscape-up {
+    width: 100px;
+    height: 100px;
+  }
+
+  &:hover {
+    background-color: $color-tertriary;
+  }
+  &__img {
+    margin-top: 3px;
+
+    @include tablet-landscape-up {
+      width: 55px;
+      height: 60px;
+    }
+  }
+}
