@@ -2,7 +2,39 @@
 
 body {
   font-family: $font-family;
+  color: $text-primary;
   * {
     font-family: $font-family;
   }
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+strong {
+  font-weight: 600;
+}
+
+.title {
+  &--underline {
+    $underline-gap: 15px;
+    padding: $underline-gap 0;
+    &::after {
+      content: "";
+      display: block;
+      position: relative;
+      bottom: -$underline-gap;
+      left: 50%;
+      transform: translateX(-50%);
+
+      height: 1px;
+      width: 75%;
+
+      background-color: $border-color-primary;
+    }
+  }
+
+  // $--lines {
+  // }
 }
