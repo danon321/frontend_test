@@ -3,6 +3,11 @@
 @mixin horizontal-gaps {
   padding-left: 30px;
   padding-right: 30px;
+
+  @include tablet-landscape-up {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
 }
 
 @mixin tablet-landscape-up {
