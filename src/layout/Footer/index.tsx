@@ -1,3 +1,4 @@
+import Button from "../../components/Button";
 import "./Footer.scss";
 
 const Footer = () => {
@@ -7,7 +8,9 @@ const Footer = () => {
         <span>css</span> <span>is</span> <span>awesome</span>
       </p>
       <p className="footer__company title title--lines">nabthat</p>
-      <button>pokaż</button>
+      <Button secoundary className="footer__button footer__button--arrow">
+        <span>Pokaż</span>
+      </Button>
     </footer>
   );
 };
