@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
+import "./styles/base/_main.scss";
 import "./styles/base/_reset.scss";
 import "./styles/base/_typography.scss";
 
