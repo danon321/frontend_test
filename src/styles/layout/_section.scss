@@ -1,0 +1,14 @@
+@use "../../styles/utils/mixins" as *;
+
+.section {
+  margin: 20px 0;
+
+  &__title {
+    padding: 20px 0 35px;
+    text-align: center;
+
+    @include tablet-landscape-up {
+      padding: 20px 0 65px;
+    }
+  }
+}
