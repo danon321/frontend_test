@@ -1,0 +1,63 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+
+.title {
+  position: relative;
+  &--underline {
+    $underline-gap: 15px;
+    padding: $underline-gap 0;
+    &::after {
+      content: "";
+      display: block;
+      position: relative;
+      bottom: -$underline-gap;
+      left: 50%;
+      transform: translateX(-50%);
+
+      height: 1px;
+      width: 75%;
+
+      background-color: $border-color-primary;
+    }
+  }
+
+  &--cutoff {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &--lines {
+    padding: 0 5px;
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      display: block;
+      height: 1px;
+      width: 50px;
+      background-color: $color-primary;
+    }
+
+    &::after {
+      left: 100%;
+    }
+
+    &::before {
+      right: 100%;
+    }
+  }
+}
+
+.desc {
+  color: $text-secondary;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  text-align: center;
+
+  @include tablet-landscape-up {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+  }
+}
