@@ -1,0 +1,16 @@
+@use "./styles/utils/variables" as *;
+@use "./styles/utils/mixins" as *;
+
+.home {
+  @include horizontal-gaps;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: $bg-primary;
+  height: 100vh;
+
+  &__title {
+    align-self: center;
+  }
+}
