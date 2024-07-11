@@ -3,13 +3,17 @@
 
 .footer {
   @include horizontal-gaps;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   align-items: center;
 
   background-color: $bg-footer;
   padding-top: 15px;
   padding-bottom: 15px;
+
+  @include tablet-landscape-up {
+    grid-template-columns: repeat(3, 1fr);
+  }
 
   &__company {
     display: none;
@@ -22,6 +26,8 @@
   }
 
   &__button {
+    justify-self: end;
+
     padding-left: 95px;
     padding-right: 95px;
 
