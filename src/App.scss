@@ -4,13 +4,93 @@
 .home {
   @include horizontal-gaps;
 
+  flex: 1;
+
   display: flex;
   flex-direction: column;
 
   background-color: $bg-primary;
-  height: 100vh;
+  padding-top: 25px;
+  padding-bottom: 25px;
 
   &__title {
     align-self: center;
+
+    @include tablet-landscape-up {
+      margin: 45px 0 25px;
+    }
+  }
+
+  &__blocks {
+    display: grid;
+    grid-template:
+      "options actions" auto
+      "content content" auto / 1fr 1fr;
+    gap: 15px;
+
+    @include tablet-landscape-up {
+      grid-template: "options actions content" auto / 1fr 1fr 1fr;
+    }
+  }
+
+  &__options {
+    grid-area: options;
+
+    .section__title {
+      text-align: start;
+
+      @include tablet-landscape-up {
+        text-align: center;
+      }
+    }
+
+    .radio {
+      margin-bottom: 20px;
+
+      @include tablet-landscape-up {
+        margin-bottom: 25px;
+      }
+    }
+  }
+
+  &__actions {
+    grid-area: actions;
+
+    .section__title {
+      text-align: end;
+
+      @include tablet-landscape-up {
+        text-align: center;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-area: content;
+
+    .title--cutoff {
+      max-width: 85vw;
+
+      @include tablet-landscape-up {
+        max-width: 30vw;
+      }
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 16px;
+
+    @include tablet-landscape-up {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+    }
   }
 }
