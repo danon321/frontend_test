@@ -14,11 +14,9 @@ const Button = ({
   ...props
 }: Props) => {
   const style = className ? className : "";
+  const secoundaryStyles = secoundary ? "button--secoundary" : "";
   return (
-    <button
-      {...props}
-      className={`button ${secoundary && "button--secoundary"} ${style}`}
-    >
+    <button {...props} className={`button ${secoundaryStyles} ${style}`}>
       {children}
     </button>
   );
