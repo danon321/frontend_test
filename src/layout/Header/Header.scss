@@ -16,6 +16,8 @@
   background-color: $bg-header;
 
   &__text {
+    display: flex;
+    flex-direction: column;
     text-align: end;
     font-size: 1.25rem;
 
