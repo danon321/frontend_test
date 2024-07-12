@@ -48,7 +48,7 @@ function App() {
   const [currentOption, setCurrentOption] = useState<Option>(defaultOption);
   const [content, setContent] = useState<Option[]>([]);
 
-  function replaceContent() {
+  function addContent() {
     const isItemAlreadyExist = content.some(
       (option) => option.id === currentOption.id
     );
@@ -57,8 +57,20 @@ function App() {
       setContent([...content, currentOption]);
     } else alert("Podana opcja juz istnieje w tekscie");
   }
-  function addContent() {
+  function replaceContent() {
     setContent([currentOption]);
+  }
+  function randomOption() {
+    const optionsLeft = options.filter(
+      (option) =>
+        !content.some((singleContent) => singleContent.id === option.id)
+    );
+
+    if (!optionsLeft.length) return;
+
+    const randomIndex = Math.floor(Math.random() * optionsLeft.length);
+    const randomOption = optionsLeft[randomIndex];
+    setCurrentOption(randomOption);
   }
 
   function sortAlphabetical(options: Option[]) {
@@ -89,15 +101,13 @@ function App() {
                 {option.title}
               </InputRadio>
             ))}
-            <InputRadio onClick={() => setCurrentOption(options[0])}>
-              Opcja losowa
-            </InputRadio>
+            <InputRadio onClick={randomOption}>Opcja losowa</InputRadio>
           </section>
           <section className="section home__actions">
             <h2 className="section__title">Blok drugi</h2>
             <div className="home__buttons">
-              <Button onClick={addContent}>Zastąp</Button>
-              <Button onClick={replaceContent}>Doklej</Button>
+              <Button onClick={replaceContent}>Zastąp</Button>
+              <Button onClick={addContent}>Doklej</Button>
             </div>
           </section>
           <section className="section home__content">
