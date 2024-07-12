@@ -6,11 +6,14 @@ import UserProvider from "./context/UserContext.tsx";
 import "./styles/base/_main.scss";
 import "./styles/base/_reset.scss";
 import "./styles/base/_typography.scss";
+import ContentProvider from "./context/ContentContext.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <UserProvider>
-      <App />
+      <ContentProvider>
+        <App />
+      </ContentProvider>
     </UserProvider>
   </React.StrictMode>
 );

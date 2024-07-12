@@ -7,83 +7,18 @@ import InputRadio from "./components/InputRadio";
 import Footer from "./layout/Footer";
 import Header from "./layout/Header";
 import { Option } from "./types/option";
-import { useState } from "react";
-
-const options: Option[] = [
-  {
-    id: 1,
-    title: "Opcja pierwsza",
-    content: "Tekst pierwszej opcji",
-  },
-  {
-    id: 2,
-    title: "Opcja druga",
-    content: "Tekst drugiej opcji",
-  },
-  {
-    id: 3,
-    title: "Opcja trzecia",
-    content: "Tekst trzeciej opcji",
-  },
-  {
-    id: 4,
-    title: "Opcja czwarta",
-    content: "Tekst czwartej opcji",
-  },
-  {
-    id: 5,
-    title: "Opcja piąta",
-    content: "Tekst asdasdasdasd opcji",
-  },
-  {
-    id: 6,
-    title: "Opcja szósta",
-    content: "Tekst abcasdasdasd opcji",
-  },
-];
-
-const defaultOption = options[0];
+import { useContent } from "./context/ContentContext";
+import { defaultOption, options } from "./options";
 
 function App() {
-  const [currentOption, setCurrentOption] = useState<Option>(defaultOption);
-  const [content, setContent] = useState<Option[]>([]);
-
-  function addContent() {
-    const isItemAlreadyExist = content.some(
-      (option) => option.id === currentOption.id
-    );
-
-    if (!isItemAlreadyExist) {
-      setContent([...content, currentOption]);
-    } else alert("Podana opcja juz istnieje w tekscie");
-  }
-  function replaceContent() {
-    setContent([currentOption]);
-  }
-  function randomOption() {
-    const optionsLeft = options.filter(
-      (option) =>
-        !content.some((singleContent) => singleContent.id === option.id)
-    );
-
-    if (!optionsLeft.length) return;
-
-    const randomIndex = Math.floor(Math.random() * optionsLeft.length);
-    const randomOption = optionsLeft[randomIndex];
-    setCurrentOption(randomOption);
-  }
-
-  function sortAlphabetical(options: Option[]) {
-    return options.sort(function (a, b) {
-      if (a.content < b.content) {
-        return -1;
-      }
-      if (a.content > b.content) {
-        return 1;
-      }
-      return 0;
-    });
-  }
+  const {
+    content,
+    setCurrentOption,
+    addContent,
+    randomOption,
+    replaceContent,
+    sortAlphabetical,
+  } = useContent();
   return (
     <>
       <Header />

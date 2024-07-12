@@ -1,13 +1,16 @@
 import Button from "../../components/Button";
 import Frame from "../../components/ui/Frame";
+import { useContent } from "../../context/ContentContext";
 import { useUser } from "../../context/UserContext";
 import "./Footer.scss";
 
 const Footer = () => {
   const { setUser, resetUser } = useUser();
+  const { resetContent } = useContent();
 
   function resetSettings() {
     resetUser();
+    resetContent();
   }
 
   return (
