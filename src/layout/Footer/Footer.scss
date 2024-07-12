@@ -44,9 +44,8 @@
           display: inline-block;
           padding: 3px;
           margin-left: 15px;
-          margin-bottom: 5px;
-          transform: rotate(45deg);
-          -webkit-transform: rotate(45deg);
+          transform: rotate(-135deg);
+          -webkit-transform: rotate(-135deg);
           transition: transform $animation-duration ease-in-out,
             border-color $animation-duration ease-in-out,
             margin $animation-duration ease-in-out;
@@ -55,9 +54,9 @@
 
       &:hover span:after {
         border-color: $text-primary;
-        transform: rotate(-135deg);
-        -webkit-transform: rotate(-135deg);
-        margin-bottom: 0;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        margin-bottom: 5px;
       }
     }
   }
