@@ -1,9 +1,5 @@
 import { createContext, ReactNode, useContext, useState } from "react";
-
-type Content = {
-  firstName: string;
-  lastName: string;
-};
+import { defaultOption, options } from "../options";
 
 type Option = {
   id: number;
@@ -26,41 +22,6 @@ const ContentContext = createContext<ContentContextType | undefined>(undefined);
 type Props = {
   children: ReactNode;
 };
-
-const options: Option[] = [
-  {
-    id: 1,
-    title: "Opcja pierwsza",
-    content: "Tekst pierwszej opcji",
-  },
-  {
-    id: 2,
-    title: "Opcja druga",
-    content: "Tekst drugiej opcji",
-  },
-  {
-    id: 3,
-    title: "Opcja trzecia",
-    content: "Tekst trzeciej opcji",
-  },
-  {
-    id: 4,
-    title: "Opcja czwarta",
-    content: "Tekst czwartej opcji",
-  },
-  {
-    id: 5,
-    title: "Opcja piąta",
-    content: "Tekst asdasdasdasd opcji",
-  },
-  {
-    id: 6,
-    title: "Opcja szósta",
-    content: "Tekst abcasdasdasd opcji",
-  },
-];
-
-const defaultOption = options[0];
 
 const ContentProvider = ({ children }: Props) => {
   const [currentOption, setCurrentOption] = useState<Option>(defaultOption);
