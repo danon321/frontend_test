@@ -1,8 +1,15 @@
 import Button from "../../components/Button";
 import Frame from "../../components/ui/Frame";
+import { useUser } from "../../context/UserContext";
 import "./Footer.scss";
 
 const Footer = () => {
+  const { setUser, resetUser } = useUser();
+
+  function resetSettings() {
+    resetUser();
+  }
+
   return (
     <footer className="footer">
       <p className="footer__special-text">
@@ -15,8 +22,14 @@ const Footer = () => {
       </Button>
       <Frame className="footer__frame">
         <ul>
-          <li>Zresetuj ustawienia</li>
-          <li>Pokaż dane osobowe</li>
+          <li onClick={resetSettings}>Zresetuj ustawienia</li>
+          <li
+            onClick={() =>
+              setUser({ firstName: "Daniel", lastName: "Dobroczek" })
+            }
+          >
+            Pokaż dane osobowe
+          </li>
         </ul>
       </Frame>
     </footer>

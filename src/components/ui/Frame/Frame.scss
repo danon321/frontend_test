@@ -20,6 +20,7 @@
       align-items: center;
       gap: 10px;
       transition: color $animation-duration ease-in-out;
+      cursor: pointer;
 
       &::before {
         content: "";
