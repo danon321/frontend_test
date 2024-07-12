@@ -2,6 +2,7 @@
 @use "../../styles/utils/mixins" as *;
 
 .footer {
+  position: relative;
   @include horizontal-gaps;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -32,6 +33,10 @@
     padding-left: 95px;
     padding-right: 95px;
 
+    &:focus + .footer__frame {
+      top: -70%;
+    }
+
     &--arrow {
       span {
         display: flex;
@@ -52,7 +57,8 @@
         }
       }
 
-      &:hover span:after {
+      &:hover span:after,
+      &:focus span:after {
         border-color: $text-primary;
         transform: rotate(45deg);
         -webkit-transform: rotate(45deg);
@@ -99,6 +105,20 @@
         transform: rotate(180deg);
         border-color: $color-tertriary;
       }
+    }
+  }
+
+  &__frame {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+
+    margin-right: 30px;
+    transition: top $animation-duration ease-in-out;
+
+    @include tablet-landscape-up {
+      margin-right: 60px;
     }
   }
 }

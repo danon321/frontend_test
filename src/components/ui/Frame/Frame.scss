@@ -1,0 +1,44 @@
+@use "../../../styles/utils/variables" as *;
+
+.frame {
+  background-color: $bg-tertiary;
+  padding: 20px 25px;
+  box-shadow: 8px 15px 60px 0px rgba(66, 68, 90, 1);
+  border-radius: 3px;
+
+  color: $color-primary;
+  font-weight: 600;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-transform: uppercase;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: color $animation-duration ease-in-out;
+
+      &::before {
+        content: "";
+        border: solid $color-primary;
+        border-width: 0 2px 2px 0;
+        display: inline-block;
+        padding: 3px;
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        transition: border-color $animation-duration ease-in-out;
+      }
+
+      &:hover {
+        color: $color-tertriary;
+
+        &::before {
+          border-color: $color-tertriary;
+        }
+      }
+    }
+  }
+}

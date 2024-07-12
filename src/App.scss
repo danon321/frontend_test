@@ -4,6 +4,9 @@
 .home {
   @include horizontal-gaps;
 
+  position: relative;
+  z-index: -1; // Needed for footer frame animation
+
   flex: 1;
 
   display: flex;
