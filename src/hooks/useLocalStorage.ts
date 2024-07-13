@@ -64,7 +64,7 @@ function useLocalStorage<T>(
     } catch (error) {
       console.error(error);
     }
-  }, [key, initialValue]);
+  }, []);
 
   return [storedValue, setValue, removeItem, editItem];
 }
