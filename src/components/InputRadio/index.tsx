@@ -1,6 +1,5 @@
 import { ReactNode, useState } from "react";
 import "./InputRadio.scss";
-import { Option } from "../../types/option";
 
 interface Props {
   children: ReactNode;
