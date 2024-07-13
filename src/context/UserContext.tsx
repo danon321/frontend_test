@@ -1,4 +1,5 @@
 import { createContext, ReactNode, useContext, useState } from "react";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 type User = {
   firstName: string;
@@ -23,7 +24,7 @@ const defaultUser: User = {
 };
 
 const UserProvider = ({ children }: Props) => {
-  const [user, setUser] = useState(defaultUser);
+  const [user, setUser] = useLocalStorage<User>("user", defaultUser);
 
   function resetUser() {
     setUser(defaultUser);

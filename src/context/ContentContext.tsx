@@ -1,5 +1,6 @@
 import { createContext, ReactNode, useContext, useState } from "react";
 import { defaultOption, options } from "../options";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 type Option = {
   id: number;
@@ -25,7 +26,7 @@ type Props = {
 
 const ContentProvider = ({ children }: Props) => {
   const [currentOption, setCurrentOption] = useState<Option>(defaultOption);
-  const [content, setContent] = useState<Option[]>([]);
+  const [content, setContent] = useLocalStorage<Option[]>("content", []);
 
   function addContent() {
     const isItemAlreadyExist = content.some(
