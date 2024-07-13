@@ -33,7 +33,7 @@
     padding-left: 95px;
     padding-right: 95px;
 
-    &:focus + .footer__frame {
+    &:focus ~ .footer__frame {
       top: -70%;
     }
 
@@ -116,6 +116,10 @@
 
     margin-right: 30px;
     transition: top $animation-duration ease-in-out;
+
+    &:focus-within {
+      top: -70%;
+    }
 
     @include tablet-landscape-up {
       margin-right: 60px;

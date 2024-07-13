@@ -12,7 +12,7 @@ const Header = () => {
         <span>
           Zadanie <strong>rekrutacyjne</strong>
         </span>
-        {userName || <span>{userName}</span>}
+        {userName}
       </p>
     </header>
   );

@@ -25,8 +25,11 @@ const Footer = () => {
       </Button>
       <Frame className="footer__frame">
         <ul>
-          <li onClick={resetSettings}>Zresetuj ustawienia</li>
+          <li tabIndex={0} onClick={resetSettings}>
+            Zresetuj ustawienia
+          </li>
           <li
+            tabIndex={0}
             onClick={() =>
               setUser({ firstName: "Daniel", lastName: "Dobroczek" })
             }

@@ -6,10 +6,17 @@ interface Props {
   children: ReactNode;
   checked?: boolean;
   onClick: () => void;
+  labelText: string;
 }
 
-const InputRadio = ({ children, checked = false, onClick }: Props) => {
+const InputRadio = ({
+  children,
+  checked = false,
+  onClick,
+  labelText,
+}: Props) => {
   const [check, setCheck] = useState(checked);
+
   function handleClick() {
     setCheck(!check);
     onClick();
@@ -21,8 +28,11 @@ const InputRadio = ({ children, checked = false, onClick }: Props) => {
         className={`radio__input`}
         type="radio"
         name="radio"
+        role="radio"
         defaultChecked={checked}
         onClick={handleClick}
+        aria-label={labelText}
+        aria-checked={check}
       />
       <p className="radio__text">{children}</p>
     </label>

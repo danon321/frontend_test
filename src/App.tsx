@@ -32,11 +32,14 @@ function App() {
                 key={option.id}
                 onClick={() => setCurrentOption(option)}
                 checked={option.id === defaultOption.id}
+                labelText={option.title}
               >
                 {option.title}
               </InputRadio>
             ))}
-            <InputRadio onClick={randomOption}>Opcja losowa</InputRadio>
+            <InputRadio labelText="Opcja losowa" onClick={randomOption}>
+              Opcja losowa
+            </InputRadio>
           </section>
           <section className="section home__actions">
             <h2 className="section__title">Blok drugi</h2>
